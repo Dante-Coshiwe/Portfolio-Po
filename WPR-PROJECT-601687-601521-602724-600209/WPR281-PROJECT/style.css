@@ -1,0 +1,44 @@
+.header {
+            
+           
+            
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.hover-zoom {
+          transition: transform 0.5s ease-in-out;
+         
+      }
+    
+.hover-zoom:hover {
+          transform: scale(1.05);
+          
+          
+        
+      }
+.hover:hover{
+    background: linear-gradient(
+        45deg,
+        hsla(168, 85%, 52%, 0.5),
+        hsla(263, 37%, 37%, 0.5) 100%
+      );
+      padding: 5%;
+}
+
+.get-started-btn {
+    background-color: blue; /* Change button background */
+    border-radius: 30px;       /* Make it more rounded */
+    padding: 15px 30px;        /* Adjust padding */
+    color: white;              /* Text color */
+    transition: all 0.3s ease;
+}
+
+.get-started-btn:hover {
+    background: linear-gradient(
+        45deg,
+        hsla(168, 85%, 52%, 0.5),
+        hsla(263, 37%, 37%, 0.5) 100%
+      );
+    transform: scale(1.05);    /* Slight zoom on hover */
+}
+
