@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dante Coshiwe Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <!-- Header/Navbar -->
+    <header>
+        <script>
+            function toggleDropdown(event) {
+                event.preventDefault();
+                const dropdown = event.target.nextElementSibling;
+                if (dropdown.classList.contains('active')) {
+                    dropdown.classList.remove('active');
+                } else {
+                    document.querySelectorAll('.dropdown').forEach(menu => menu.classList.remove('active'));
+                    dropdown.classList.add('active');
+                }
+            }
+
+            document.addEventListener('click', (event) => {
+                if (!event.target.closest('li')) {
+                    document.querySelectorAll('.dropdown').forEach(menu => menu.classList.remove('active'));
+                }
+            });
+
+            function showsidebar() {
+                document.querySelector('.sidebar').classList.add('active');
+            }
+
+            function hidesidebar() {
+                document.querySelector('.sidebar').classList.remove('active');
+            }
+
+            function animateNumber(el, target, duration) {
+                let start = 0;
+                let startTime = null;
+                function update(timestamp) {
+                    if (!startTime) startTime = timestamp;
+                    const progress = timestamp - startTime;
+                    const value = Math.min(Math.floor(progress / duration * target), target);
+                    el.textContent = value;
+                    if (value < target) {
+                        requestAnimationFrame(update);
+                    }
+                }
+                requestAnimationFrame(update);
+            }
+        </script>
+
+        <nav>
+            <ul class="sidebar" class="sidebar active">
+                <li>
+                    <a href="#" onclick="hidesidebar()">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                            fill="#e8eaed">
+                            <path
+                                d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" />
+                        </svg>
+                    </a>
+                </li>
+                <li><a href="#Skills">Skills</a></li>
+                <li><a href="#portfolio">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+
+            <ul class="desktop-nav hideonmobile">
+                <li><a href="#Skills">Skills</a></li>
+                <li><a href="#portfolio">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+
+        <svg xmlns="http://www.w3.org/2000/svg" onclick="showsidebar()" height="24px" viewBox="0 -960 960 960"
+            width="24px" fill="#e8eaed">
+            <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z" />
+        </svg>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <video height="100vh" autoplay muted loop class="backroundvid">
+                    <source src="capture (5).webm" type="video/webm">
+                </video>
+                <h1> Hi, I'm<span> Dante Coshiwe</span></h1>
+                <p>I enjoy turning ideas into functional, wellcrafted digital solutions.
+                    I work comfortably across the frontend, backend, and databases
+                    building with</p>
+                <h2>HTML, CSS, JavaScript, C#, and SQL</h2>
+                <div class="Herobutton-wrapper">
+                    <a href="Dante Coshiwe CV.pdf">
+                    <button class="Herobutton">
+                        <div class="dots_border"></div>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="sparkle">
+                            <path class="path" stroke-linejoin="round" stroke-linecap="round" stroke="black"
+                                fill="black"
+                                d="M14.187 8.096L15 5.25L15.813 8.096C16.0231 8.83114 16.4171 9.50062 16.9577 10.0413C17.4984 10.5819 18.1679 10.9759 18.903 11.186L21.75 12L18.904 12.813C18.1689 13.0231 17.4994 13.4171 16.9587 13.9577C16.4181 14.4984 16.0241 15.1679 15.814 15.903L15 18.75L14.187 15.904C13.9769 15.1689 13.5829 14.4994 13.0423 13.9587C12.5016 13.4181 11.8321 13.0241 11.097 12.814L8.25 12L11.096 11.187C11.8311 10.9769 12.5006 10.5829 13.0413 10.0423C13.5819 9.50162 13.9759 8.83214 14.186 8.097L14.187 8.096Z">
+                            </path>
+                            <path class="path" stroke-linejoin="round" stroke-linecap="round" stroke="black"
+                                fill="black"
+                                d="M6 14.25L5.741 15.285C5.59267 15.8785 5.28579 16.4206 4.85319 16.8532C4.42059 17.2858 3.87853 17.5927 3.285 17.741L2.25 18L3.285 18.259C3.87853 18.4073 4.42059 18.7142 4.85319 19.1468C5.28579 19.5794 5.59267 20.1215 5.741 20.715L6 21.75L6.259 20.715C6.40725 20.1216 6.71398 19.5796 7.14639 19.147C7.5788 18.7144 8.12065 18.4075 8.714 18.259L9.75 18L8.714 17.741C8.12065 17.5925 7.5788 17.2856 7.14639 16.853C6.71398 16.4204 6.40725 15.8784 6.259 15.285L6 14.25Z">
+                            </path>
+                            <path class="path" stroke-linejoin="round" stroke-linecap="round" stroke="black"
+                                fill="black"
+                                d="M6.5 4L6.303 4.5915C6.24777 4.75718 6.15472 4.90774 6.03123 5.03123C5.90774 5.15472 5.75718 5.24777 5.5915 5.303L5 5.5L5.5915 5.697C5.75718 5.75223 5.90774 5.84528 6.03123 5.96877C6.15472 6.09226 6.24777 6.24282 6.303 6.4085L6.5 7L6.697 6.4085C6.75223 6.24282 6.84528 6.09226 6.96877 5.96877C7.09226 5.84528 7.24282 5.75223 7.4085 5.697L8 5.5L7.4085 5.303C7.24282 5.24777 7.09226 5.15472 6.96877 5.03123C6.84528 4.90774 6.75223 4.75718 6.697 4.5915L6.5 4Z">
+                            </path>
+                        </svg>
+                        <span class="text_button">Download My CV</span>
+                    </button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About <span>Me</span></h2>
+            <div class="about-content">
+                <div class="partner">
+                    <div class="partner-img">
+                        <img src="DanteCoshiwe.jpg" alt="Partner 1">
+                    </div>
+                    <div class="partner-info">
+                        <h3>Dante Coshiwe</h3>
+                        <p class="role">Front-End Engineer & Interface Designer</p>
+                        <p>Dante is a full-stack engineer crafting seamless, user-centered web experiences that
+                            are both functional and visually engaging.</p>
+                        <div class="social-links">
+                            <a href="https://github.com/Dante-Coshiwe/Portfolio-Po#"><i class="fab fa-github"></i></a>
+                            <a
+                                href="https://www.linkedin.com/in/dante-coshiwe-9093ba367?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"><i
+                                    class="fab fa-linkedin"></i></a>
+                            <a href="https://www.instagram.com/dante.csa_?igsh=NHZnaGllM2N3MGNw&utm_source=qr"><i
+                                    class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="about-story">
+                <h3>My Story</h3>
+                <p>I’ve always been curious about how things work especially when it comes to technology. That
+                    curiosity led me to pursue a Bachelor of Computing at Belgium Campus iTversity, where I’m turning my
+                    passion for problem-solving into practical skills.
+
+                    Over the past few years, I’ve focused on building a strong foundation in both front-end and back-end
+                    development. I enjoy creating clean, responsive web experiences with HTML, CSS, and JavaScript, but
+                    I also love getting under the hood working with C#, SQL, and database systems to bring
+                    functionality to life.
+
+                    I believe the best solutions are not only technically sound but also thoughtful and user-friendly.
+                    Whether I’m designing an interface, debugging code, or structuring a database, I aim to build
+                    real-world tech that works and works well.
+
+                    Right now, I’m looking for opportunities to grow whether that’s through internships, freelance
+                    projects, or collaborating with a team where I can contribute, learn, and keep building.
+
+                    When I’m not coding, I’m probably learning something new, refining my skills, or sketching out ideas
+                    for my next project. </p>
+                <div class="stats">
+                    <div class="stat-item">
+                        <span class="number" data-count="6">0</span>
+                        <span class="label">Projects</span>
+
+                        <script>
+                            window.addEventListener("load", () => {
+                                document.querySelectorAll('.number').forEach(el => {
+                                    animateNumber(el, parseInt(el.getAttribute('data-count')), 2000);
+                                });
+                            });
+                        </script>
+
+                    </div>
+                </div>
+            </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="Skills" class="services">
+        <article class="Choose-interface">
+            <h2 class="section-title">My <span>Skills</span></h2>
+            <section class="imgone">
+                <h3>Front-End Development <svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960"
+                        width="30px" fill="#FFFFFF">
+                        <path
+                            d="M320-242 80-482l242-242 43 43-199 199 197 197-43 43Zm318 2-43-43 199-199-197-197 43-43 240 240-242 242Z" />
+                    </svg></h3>
+                <p>I create clean, responsive interfaces using HTML, CSS, and JavaScript,<br>
+                    with a focus on making web experiences that work across devices and look professional.
+                </p>
+                <button class="hover-button"><a href="#contact">Enquire</a></button>
+            </section>
+
+            <section class="imgtwo">
+                <h3>Back-End Development (C#) <svg xmlns="http://www.w3.org/2000/svg" height="30px"
+                        viewBox="0 -960 960 960" width="30px" fill="#FFFFFF">
+                        <path
+                            d="m357-513 90-90-75-75-48 48-42-42 48-48-75-74-90 90 192 191Zm346 348 90-91-75-75-48 48-42-42 48-48-74-74-90 90 191 192Zm8-615 70 70-70-70ZM276-120H120v-156l194-194L80-704l174-176 236 235 178-178q9-9 20-13t22-4q11 0 22 4t20 13l71 71q9 9 13 20t4 22q0 11-4 22t-13 20L645-490l235 235L705-81 471-315 276-120Zm-96-60h70l393-394-70-70-393 394v70Zm428-429-35-35 70 70-35-35Z" />
+                    </svg></h3>
+
+                <p>Keep your site running smoothly with our maintenance packages, which cover regular
+                    security updates,
+                    <br> speed and performance tuning, content management, routine backups, and on-demand technical
+                    support.
+
+                </p>
+                <button class="hover-button"><a href="#contact">Enquire</a></button>
+            </section>
+
+            <section class="imgthree">
+                <h3>Database Management (SQL)<svg xmlns="http://www.w3.org/2000/svg" height="30px"
+                        viewBox="0 -960 960 960" width="30px" fill="#FFFFFF">
+                        <path
+                            d="m357-513 90-90-75-75-48 48-42-42 48-48-75-74-90 90 192 191Zm346 348 90-91-75-75-48 48-42-42 48-48-74-74-90 90 191 192Zm8-615 70 70-70-70ZM276-120H120v-156l194-194L80-704l174-176 236 235 178-178q9-9 20-13t22-4q11 0 22 4t20 13l71 71q9 9 13 20t4 22q0 11-4 22t-13 20L645-490l235 235L705-81 471-315 276-120Zm-96-60h70l393-394-70-70-393 394v70Zm428-429-35-35 70 70-35-35Z" />
+                    </svg></h3>
+                <p>
+                    I have practical experience working with SQL databases, understanding how to structure,<br>
+                    query, and maintain data to support real-world applications.
+                </p>
+                <button class="hover-button"><a href="#contact">Enquire</a></button>
+            </section>
+
+            <section class="imgfour">
+                <h3>Problem Solving & Continuous Learning <svg xmlns="http://www.w3.org/2000/svg" height="30px"
+                        viewBox="0 -960 960 960" width="30px" fill="#FFFFFF">
+                        <path
+                            d="M240-80v-172q-57-52-88.5-121.5T120-520q0-150 105-255t255-105q125 0 221.5 73.5T827-615l52 205q5 19-7 34.5T840-360h-80v120q0 33-23.5 56.5T680-160h-80v80h-80v-160h160v-200h108l-38-155q-23-91-98-148t-172-57q-116 0-198 81t-82 197q0 60 24.5 114t69.5 96l26 24v208h-80Zm254-360Zm-54 80h80l6-50q8-3 14.5-7t11.5-9l46 20 40-68-40-30q2-8 2-16t-2-16l40-30-40-68-46 20q-5-5-11.5-9t-14.5-7l-6-50h-80l-6 50q-8 3-14.5 7t-11.5 9l-46-20-40 68 40 30q-2 8-2 16t2 16l-40 30 40 68 46-20q5 5 11.5 9t14.5 7l6 50Zm40-100q-25 0-42.5-17.5T420-520q0-25 17.5-42.5T480-580q25 0 42.5 17.5T540-520q0 25-17.5 42.5T480-460Z" />
+                    </svg></h3>
+                <p>
+                    I'm passionate about building real-world tech solutions and constantly improving my skills. <br>
+                    I enjoy tackling new challenges, debugging, and learning new technologies as part of my growth as a
+                    developer.
+                </p>
+                <button class="hover-button"><a href="#contact">Enquire</a></button>
+            </section>
+        </article>
+
+        <!-- Portfolio Section -->
+        <section id="portfolio" class="portfolio">
+            <div class="container">
+                <h2 class="section-title">My <span>Projects</span></h2>
+                <div class="portfolio-filter">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="web">Web Design</button>
+                    <button class="filter-btn" data-filter="JavaScriptApp">JavaScript app</button>
+                    <button class="filter-btn" data-filter="C#app">C# app</button>
+                    <button class="filter-btn" data-filter="Poster">Poster</button>
+                </div>
+                <div class="portfolio-grid">
+                    <div class="portfolio-item" data-category="web">
+                        <img src="Gradient Harmony with Grainy Texture.png" alt="Project 1">
+                        <div class="portfolio-overlay">
+                            <h3>Personal Portfolio website</h3>
+                            <p>Web Design</p>
+                            <a href="#" class="portfolio-link"><i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                    <div class="portfolio-item" data-category="JavaScriptApp">
+                        <img src="Gradient Harmony with Grainy Texture.png" alt="Project 2">
+                        <div class="portfolio-overlay">
+                            <h3>Fitness Tracker App</h3>
+                            <p>JavaScript App</p>
+                            <a href="#" class="portfolio-link"><i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                    <div class="portfolio-item" data-category="JavaScriptApp" data-categoty="web">
+                        <img src="invoiceGenerator.png" alt="Project 3">
+                        <div class="portfolio-overlay">
+                            <h3>Invoice Generator</h3>
+                            <p>web design/javascript app</p>
+                            <a href="#" class="portfolio-link"><i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="portfolio-item" data-category="Poster">
+                        <img src="PosterMake.png" alt="Project 4">
+                        <div class="portfolio-overlay">
+                            <h3>Poster Design</h3>
+                            <p>Poster</p>
+                        </div>
+                    </div>
+                    <div class="portfolio-item" data-category="C#app">
+                        <img src="cSharp.png" alt="Project 5">
+                        <div class="portfolio-overlay">
+                            <h3>C# Menu driven application</h3>
+                            <p>C# App</p>
+                        </div>
+                    </div>
+                    <div class="portfolio-item" data-category="C#app">
+                        <img src="cSharp.png" alt="Project 6">
+                        <div class="portfolio-overlay">
+                            <h3>C# Menu driven application 2</h3>
+                            <p>C# App</p>
+                        </div>
+                    </div>
+                </div>
+        </section>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const filterButtons = document.querySelectorAll(".filter-btn");
+                const portfolioItems = document.querySelectorAll(".portfolio-item");
+
+                filterButtons.forEach(button => {
+                    button.addEventListener("click", () => {
+                        filterButtons.forEach(btn => btn.classList.remove("active"));
+                        button.classList.add("active");
+
+                        const filterValue = button.getAttribute("data-filter");
+
+                        portfolioItems.forEach(item => {
+                            const itemCategory = item.getAttribute("data-category");
+
+                            if (filterValue === "all" || itemCategory === filterValue) {
+                                item.style.display = "block";
+                            } else {
+                                item.style.display = "none";
+                            }
+                        });
+                    });
+                });
+            });
+        </script>
+
+
+        <!--resources-section -->
+
+        <section class="resources-section">
+            <h2 class="section-title">Recources I <span>used</span></h2>
+
+            <div class="resources-grid">
+
+                <!-- Resource Card -->
+                <div class="resource-card">
+                    <a href="https://www.youtube.com/watch?v=fYq5PXgSsbE" target="_blank">
+                        <img src="https://img.youtube.com/vi/fYq5PXgSsbE/hqdefault.jpg" alt="Flexbox"
+                            class="resource-image">
+                        <div class="resource-content">
+                            <h3 class="resource-title">Master Flexbox in 15 Minutes</h3>
+                            <p class="resource-description">Quick but powerful intro to Flexbox by Web Dev Simplified.
+                            </p>
+                            <span class="resource-link">Watch →</span>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="resource-card">
+                    <a href="https://www.freecodecamp.org/learn/2022/responsive-web-design/learn-html-by-building-a-cat-photo-app/"
+                        target="_blank">
+                        <img src="Gradient Harmony with Grainy Texture.png" alt="HTML Cat Photo App"
+                            class="resource-image">
+                        <div class="resource-content">
+                            <h3 class="resource-title">Learn HTML by Building a Cat Photo App</h3>
+                            <p class="resource-description">An interactive FreeCodeCamp module that teaches HTML basics.
+                            </p>
+                            <span class="resource-link">Try It →</span>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="resource-card">
+                    <a href="https://www.youtube.com/watch?v=hs3piaN4b5I" target="_blank">
+                        <img src="https://img.youtube.com/vi/hs3piaN4b5I/hqdefault.jpg" alt="CSS Grid vs Flexbox"
+                            class="resource-image">
+                        <div class="resource-content">
+                            <h3 class="resource-title">CSS Grid vs Flexbox: When to Use Which?</h3>
+                            <p class="resource-description">Kevin Powell breaks down the difference between Grid and
+                                Flexbox.</p>
+                            <span class="resource-link">Watch →</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="RecourcebuttonCon">
+                    <button class="Recourcebutton" style="--clr: #7808d0">
+                        <span class="Recourcebutton__icon-wrapper">
+                            <svg viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg"
+                                class="Recourcebutton__icon-svg" width="10">
+                                <path
+                                    d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z"
+                                    fill="currentColor"></path>
+                            </svg>
+
+                            <svg viewBox="0 0 14 15" fill="none" width="10" xmlns="http://www.w3.org/2000/svg"
+                                class="Recourcebutton__icon-svg Recourcebutton__icon-svg--copy">
+                                <path
+                                    d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z"
+                                    fill="currentColor"></path>
+                            </svg>
+                        </span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Testimonials Section -->
+        <section class="testimonials">
+            <div class="container">
+                <h2 class="section-title"><span>Professional Summary</span></h2>
+                <div class="testimonial-slider">
+                    <div class="testimonial-slide active">
+                        <div class="testimonial-content">
+                            <p>"Skilled in JavaScript, C#, and SQL, with a proven ability to design reliable, scalable solutions. Known for attention to detail, clean development practices, and a focus on delivering real value to clients."</p>
+                            <div class="client-info">
+                                <img src="DanteCoshiwe.jpg" alt="Client 1">
+                                <div>
+                                    <h4>Dante Coshiwe</h4>
+                                    <p></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-slide">
+                        <div class="testimonial-content">
+                            <p>"Known for attention to detail, reliable project delivery, and strong problem-solving skills."</p>
+                            <div class="client-info">
+                                <img src="DanteCoshiwe.jpg" alt="Client 2">
+                                <div>
+                                    <h4>Dante Coshiwe</h4>
+                                    <p></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-slide">
+                        <div class="testimonial-content">
+                            <p>"Known for developing clean, functional web solutions with strong skills in JavaScript, C#, and SQL. Committed to problem-solving, attention to detail, and delivering reliable results"</p>
+                            <div class="client-info">
+                                <img src="DanteCoshiwe.jpg" alt="Client 3">
+                                <div>
+                                    <h4>Dante Coshiwe</h4>
+                                    <p></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slider-controls">
+                        <button class="slider-prev"><i class="fas fa-chevron-left"></i></button>
+                        <button class="slider-next"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const slides = document.querySelectorAll(".testimonial-slide");
+                const nextBtn = document.querySelector(".slider-next");
+                const prevBtn = document.querySelector(".slider-prev");
+
+                let currentSlide = 0;
+
+                function showSlide(index) {
+                    slides.forEach((slide, i) => {
+                        slide.classList.toggle("active", i === index);
+                    });
+                }
+                nextBtn.addEventListener("click", () => {
+                    currentSlide = (currentSlide + 1) % slides.length;
+                    showSlide(currentSlide);
+                });
+
+                prevBtn.addEventListener("click", () => {
+                    currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+                    showSlide(currentSlide);
+                });
+                // setInterval(() => {
+                //     currentSlide = (currentSlide + 1) % slides.length;
+                //     showSlide(currentSlide);
+                // }, 5000);
+            });
+        </script>
+        <!-- Contact Section -->
+        <section id="contact" class="contact">
+            <div class="container">
+                <h2 class="section-title">Get In <span>Touch</span></h2>
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <div class="info-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <p>Johannesburg/Pretoria</p>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-envelope"></i>
+                            <p>dantecoshiwe@icloud.com</p>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-phone-alt"></i>
+                            <p> 068 0656 2904</p>
+                        </div>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-whatsapp"></i></a>
+                        </div>
+                        <!--FAQ's Section -->
+                        <div class="faq">
+                            <h3>Frequently Asked Questions</h3>
+                            <details>
+                                <summary>What kind of work do you do?</summary>
+                                <p>I enjoy solving problems with code and building digital solutions. I work across the
+                                    frontend, backend, and databases whether it's a website, web app, or technical
+                                    Projects.</p>
+                            </details>
+                            <details>
+                                <summary>What technologies do you work with?</summary>
+                                <p>I primarily work with HTML, CSS, JavaScript, C#, and SQL. I'm comfortable across both
+                                    client-side and serverside development, as well as database design, I am also open
+                                    to learning other languages</p>
+                            </details>
+                            <details>
+                                <summary>Are you open to freelance, contract, or full-time work?</summary>
+                                <p>Yes. I'm open to flexible opportunities, including freelance projects, part-time
+                                    roles, or full-time positions as long as it's interesting, meaningful work.</p>
+                            </details>
+                            <details>
+                                <summary> Do you only work on websites?</summary>
+                                <p>No while I enjoy building websites, I'm also open to software development, technical
+                                    problem-solving, and backend projects, especially using C# and SQL.</p>
+                            </details>
+                        </div>
+
+                    </div>
+                    <form class="contact-form" action="https://formsubmit.co/dantecoshiwe@gmail.com" method="POST">
+                        <div class="form-group">
+                            <input type="text" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" name="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="Phone Number" placeholder="Phone Number (Optional)">
+                        </div>
+                        <div class="form-group">
+                            <textarea placeholder="Your Message" name="Your Message" required></textarea>
+                        </div>
+                        <button type="submit" name="submit" class="btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+        <!-- Chatbase AI Chatbot -->
+
+        <script>
+            (function () { if (!window.chatbase || window.chatbase("getState") !== "initialized") { window.chatbase = (...arguments) => { if (!window.chatbase.q) { window.chatbase.q = [] } window.chatbase.q.push(arguments) }; window.chatbase = new Proxy(window.chatbase, { get(target, prop) { if (prop === "q") { return target.q } return (...args) => target(prop, ...args) } }) } const onLoad = function () { const script = document.createElement("script"); script.src = "https://www.chatbase.co/embed.min.js"; script.id = "b-OZumuInu-hJAvYMohk7"; script.domain = "www.chatbase.co"; document.body.appendChild(script) }; if (document.readyState === "complete") { onLoad() } else { window.addEventListener("load", onLoad) } })();
+        </script>
+
+        <!-- Footer -->
+</body>
+
+</html>
