@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Statistics Calculator by Dante Coshiwe</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <form class="contact-form">
+            <img src="Logorevised-removebg-preview.png" alt="" width="80">
+            <div class="form-group">
+                <select name="statsMeth" id="method">
+                    <option data-filter="binomialDistribution" value="binomialDistribution">Binomial Distribution
+                    </option>
+                    <option data-filter="poissonDistribution" value="poissonDistribution">Poisson Distribution </option>
+                </select>
+
+            </div>
+            <!--Binomial distribution by Dante Coshiwe-->
+            <div class="form-group">
+                <input class="method-things" data-category="binomialDistribution" type="text" id="numberOfTrials"
+                    placeholder="number of events" required>
+            </div>
+            <div class="form-group">
+                <input class="method-things" data-category="binomialDistribution" type="text" id="numberOfSuccess"
+                    placeholder="Number of successful outcomes" required>
+            </div>
+            <div class="form-group">
+                <input class="method-things" data-category="binomialDistribution" type="text" id="probabilityB"
+                    placeholder="Probability" step="0.01" min="0" max="1" required>
+            </div>
+
+            <!--Poisson distribution-->
+            <div class="form-group">
+                <input class="method-things" data-category="poissonDistribution" type="text" id="lambda"
+                    placeholder="Mean (Lambda value)" step="0.01" required>
+            </div>
+
+            <div class="form-group">
+                <input class="method-things" data-category="poissonDistribution" type="text" id="numberOfEvents"
+                    placeholder="Number of events (or successes)" required>
+            </div>
+
+            <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+            <script src="formulas.js"></script>
+
+            <hr>
+
+            <div id="item-container">
+                <div class="item-row" class="form-group">
+                    <div class="form-group">
+                    </div>
+                </div>
+            </div>
+            <canvas id="probabilityChart" width="600" height="400"></canvas>
+            <hr>
+            <div id="resultsContainer" class="result-display"></div>
+            <button class="Recourcebutton" type="button" id="generate-btn">Generate Statistics </button>
+        </form>
+    </div>
+    
+</body>
+
+</html>
